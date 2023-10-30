@@ -1,0 +1,11 @@
+**data_preparation contains files to process data and prepare them for training**
+- threshold: after manual annotaion we need to set confidence (aka vizability) to 0 1 or 2, in our case for validation dataset we set 0 to points not vizable on the image so we make assumption on best threshold for setting to 0 based on statistical findings on val dataset
+- clean_json: we set 0 or 2 based on condifence of keypoint, find coordinates for mirror images, correct crowd and id fields
+**evaluation contains files to evaluate the results comparing with ground truth** 
+- coco_evaluation uses https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py (don't forget to install it from github!!!)
+- interference_with_ground_truth: runs models on images if we already have the groundtruth (for the sake of formating of the result as it has to match to the groundtruth namings)
+- interference_with_ground_truth: just to get the result of the model
+- coco_evaluation.py: the file located in cocoapi/... should be changed to this file after cloning this repo!!!
+
+**experiments contains scripts to run training**
+
